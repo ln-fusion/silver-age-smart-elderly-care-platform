@@ -1,0 +1,146 @@
+[
+  {
+    "id": "DEV001",
+    "type": "智能手环",
+    "model": "HC-100Pro",
+    "userName": "王大爷",
+    "status": "在线",
+    "battery": 85,
+    "lastActiveTime": "2025-05-18 07:30:22",
+    "firmwareVersion": "2.5.3",
+    "description": "具备心率监测、血压监测、血氧监测、计步、睡眠监测、跌倒检测、SOS求助等功能",
+    "operationLogs": [
+      {
+        "time": "2025-04-15",
+        "operation": "电池更换，操作人员：王技术员"
+      },
+      {
+        "time": "2025-03-02",
+        "operation": "固件升级，操作人员：系统自动"
+      }
+    ]
+  },
+  {
+    "id": "DEV002",
+    "type": "智能手环",
+    "model": "HC-100Pro",
+    "userName": "张奶奶",
+    "status": "在线",
+    "battery": 62,
+    "lastActiveTime": "2025-05-18 07:28:15",
+    "firmwareVersion": "2.5.3",
+    "description": "具备心率监测、血压监测、血氧监测、计步、睡眠监测、跌倒检测、SOS求助等功能",
+    "operationLogs": [
+      {
+        "time": "2025-05-01",
+        "operation": "设备重置，操作人员：李技术员"
+      }
+    ]
+  },
+  {
+    "id": "DEV003",
+    "type": "智能手环",
+    "model": "HC-100Pro",
+    "userName": "刘爷爷",
+    "status": "离线",
+    "battery": 0,
+    "lastActiveTime": "2025-05-17 18:45:30",
+    "firmwareVersion": "2.5.3",
+    "description": "具备心率监测、血压监测、血氧监测、计步、睡眠监测、跌倒检测、SOS求助等功能",
+    "operationLogs": [
+      {
+        "time": "2025-05-17",
+        "operation": "电池更换，操作人员：王技术员"
+      }
+    ]
+  },
+  {
+    "id": "DEV004",
+    "type": "家庭终端",
+    "model": "HT-200",
+    "userName": "王大爷",
+    "status": "在线",
+    "battery": "不适用",
+    "lastActiveTime": "2025-05-18 07:35:10",
+    "firmwareVersion": "3.1.2",
+    "description": "具备视频通话、健康数据显示、紧急呼叫、用药提醒、活动推送等功能",
+    "operationLogs": [
+      {
+        "time": "2025-04-20",
+        "operation": "系统升级，操作人员：系统自动"
+      }
+    ]
+  },
+  {
+    "id": "DEV005",
+    "type": "家庭终端",
+    "model": "HT-200",
+    "userName": "张奶奶",
+    "status": "在线",
+    "battery": "不适用",
+    "lastActiveTime": "2025-05-18 07:32:45",
+    "firmwareVersion": "3.1.2",
+    "description": "具备视频通话、健康数据显示、紧急呼叫、用药提醒、活动推送等功能",
+    "operationLogs": [
+      {
+        "time": "2025-05-10",
+        "operation": "硬件检修，操作人员：王技术员"
+      },
+      {
+        "time": "2025-04-20",
+        "operation": "系统升级，操作人员：系统自动"
+      }
+    ]
+  },
+  {
+    "id": "DEV006",
+    "type": "环境传感器",
+    "model": "ES-50",
+    "userName": "王大爷",
+    "status": "在线",
+    "battery": 90,
+    "lastActiveTime": "2025-05-18 07:36:20",
+    "firmwareVersion": "1.8.5",
+    "description": "具备温度监测、湿度监测、空气质量、烟雾检测、燃气检测等功能",
+    "operationLogs": [
+      {
+        "time": "2025-03-15",
+        "operation": "传感器校准，操作人员：李技术员"
+      }
+    ]
+  },
+  {
+    "id": "DEV007",
+    "type": "环境传感器",
+    "model": "ES-50",
+    "userName": "张奶奶",
+    "status": "在线",
+    "battery": 25,
+    "lastActiveTime": "2025-05-18 07:34:50",
+    "firmwareVersion": "1.8.5",
+    "description": "具备温度监测、湿度监测、空气质量、烟雾检测、燃气检测等功能",
+    "operationLogs": [
+      {
+        "time": "2025-04-05",
+        "operation": "电池更换，操作人员：王技术员"
+      }
+    ]
+  },
+  {
+    "id": "DEV008",
+    "type": "智能药盒",
+    "model": "MP-30",
+    "userName": "王大爷",
+    "status": "在线",
+    "battery": 65,
+    "lastActiveTime": "2025-05-18 07:00:15",
+    "firmwareVersion": "1.2.8",
+    "description": "具备定时提醒、服药记录、药品管理、远程监控等功能",
+    "operationLogs": [
+      {
+        "time": "2025-05-05",
+        "operation": "固件升级，操作人员：系统自动"
+      }
+    ]
+  }
+]

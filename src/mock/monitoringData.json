@@ -1,0 +1,106 @@
+{
+  "elderStats": {
+    "total": 128,
+    "livingAlone": 20,
+    "livingWithChildren": 50,
+    "livingWithSpouse": 30,
+    "nursingHome": 28,
+    "healthStats": {
+      "good": 80,
+      "attention": 30,
+      "intervention": 18
+    },
+    "ageDistribution": [
+      { "range": "60 - 69", "count": 30 },
+      { "range": "70 - 79", "count": 40 },
+      { "range": "80 - 89", "count": 38 },
+      { "range": "90+", "count": 20 }
+    ]
+  },
+  "alertStats": {
+    "today": 5,
+    "fallAlerts": 2,
+    "smokeAlerts": 1,
+    "heartRateAlerts": 1,
+    "geofenceAlerts": 0,
+    "emergencyCalls": 1,
+    "alertTrends": [
+      { "date": "2024-01-01", "count": 3 },
+      { "date": "2024-01-02", "count": 4 },
+      { "date": "2024-01-03", "count": 5 },
+      { "date": "2024-01-04", "count": 2 },
+      { "date": "2024-01-05", "count": 3 }
+    ]
+  },
+  "deviceStats": {
+    "total": 200,
+    "online": 180,
+    "offline": 10,
+    "malfunction": 10,
+    "deviceTypeDistribution": [
+      { "type": "手环", "count": 100 },
+      { "type": "烟雾报警器", "count": 50 },
+      { "type": "定位器", "count": 30 },
+      { "type": "心率监测仪", "count": 20 }
+    ],
+    "batteryStats": {
+      "good": 150,
+      "low": 30,
+      "critical": 20
+    }
+  },
+  "recentAlerts": [
+    {
+      "id": "AL001",
+      "type": "跌倒告警",
+      "time": "2024-01-05 10:00:00",
+      "location": "房间101",
+      "elderName": "张大爷",
+      "status": "已处理"
+    },
+    {
+      "id": "AL002",
+      "type": "烟雾告警",
+      "time": "2024-01-05 11:00:00",
+      "location": "厨房",
+      "elderName": "李奶奶",
+      "status": "处理中"
+    },
+    {
+      "id": "AL003",
+      "type": "心率异常",
+      "time": "2024-01-05 12:00:00",
+      "location": "房间102",
+      "elderName": "王大爷",
+      "status": "未处理"
+    },
+    {
+      "id": "AL004",
+      "type": "紧急呼叫",
+      "time": "2024-01-05 13:00:00",
+      "location": "房间103",
+      "elderName": "赵奶奶",
+      "status": "已处理"
+    },
+    {
+      "id": "AL005",
+      "type": "跌倒告警",
+      "time": "2024-01-05 14:00:00",
+      "location": "走廊",
+      "elderName": "孙大爷",
+      "status": "处理中"
+    }
+  ],
+  "alertTrends": [
+    { "date": "2024-01-01", "count": 10 },
+    { "date": "2024-01-02", "count": 15 }
+  ],
+  "ageDistribution": [
+    { "range": "60-69", "count": 20 },
+    { "range": "70-79", "count": 30 }
+  ],
+  "deviceTypeDistribution": [
+    { "type": "手环", "count": 50 },
+    { "type": "定位器", "count": 30 }
+  ]
+}

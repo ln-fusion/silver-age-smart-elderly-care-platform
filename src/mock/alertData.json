@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ALM001",
+    "type": "跌倒告警",
+    "time": "2025-05-18 06:32:15",
+    "location": "卧室",
+    "status": "已处理",
+    "description": "检测到用户在卧室可能发生跌倒，已通知家属并确认安全",
+    "handler": "李护工",
+    "handleTime": "2025-05-18 06:40:22",
+    "handleMethod": "电话确认",
+    "severity": "高"
+  },
+  {
+    "id": "ALM002",
+    "type": "烟雾告警",
+    "time": "2025-05-17 19:15:43",
+    "location": "厨房",
+    "status": "已处理",
+    "description": "厨房区域检测到烟雾浓度异常，已远程关闭燃气阀门",
+    "handler": "系统自动处理",
+    "handleTime": "2025-05-17 19:15:50",
+    "handleMethod": "自动关闭燃气",
+    "severity": "高"
+  },
+  {
+    "id": "ALM003",
+    "type": "电子围栏越界",
+    "time": "2025-05-17 15:22:10",
+    "location": "小区南门",
+    "status": "已处理",
+    "description": "用户离开预设安全区域，已通知家属",
+    "handler": "王医生",
+    "handleTime": "2025-05-17 15:30:05",
+    "handleMethod": "电话确认",
+    "severity": "中"
+  },
+  {
+    "id": "ALM004",
+    "type": "长时间静止",
+    "time": "2025-05-16 22:45:30",
+    "location": "客厅",
+    "status": "已处理",
+    "description": "用户在客厅区域静止不动超过2小时，系统发出提醒",
+    "handler": "张护工",
+    "handleTime": "2025-05-16 22:50:12",
+    "handleMethod": "上门确认",
+    "severity": "中"
+  },
+  {
+    "id": "ALM005",
+    "type": "血压异常",
+    "time": "2025-05-16 08:10:25",
+    "location": "卧室",
+    "status": "已处理",
+    "description": "用户血压读数为160/95，超出正常范围",
+    "handler": "赵医生",
+    "handleTime": "2025-05-16 08:25:40",
+    "handleMethod": "视频问诊",
+    "severity": "高"
+  },
+  {
+    "id": "ALM006",
+    "type": "未服药提醒",
+    "time": "2025-05-15 20:00:00",
+    "location": "系统",
+    "status": "已处理",
+    "description": "用户未按计划服用晚间降压药物",
+    "handler": "系统自动处理",
+    "handleTime": "2025-05-15 20:30:00",
+    "handleMethod": "语音提醒",
+    "severity": "低"
+  },
+  {
+    "id": "ALM007",
+    "type": "异常活动",
+    "time": "2025-05-15 03:15:22",
+    "location": "卫生间",
+    "status": "已处理",
+    "description": "深夜频繁如厕行为，可能存在健康隐患",
+    "handler": "李医生",
+    "handleTime": "2025-05-15 09:00:15",
+    "handleMethod": "电话随访",
+    "severity": "中"
+  },
+  {
+    "id": "ALM008",
+    "type": "设备离线",
+    "time": "2025-05-14 14:30:45",
+    "location": "系统",
+    "status": "未处理",
+    "description": "智能手环设备已离线超过12小时",
+    "handler": "",
+    "handleTime": "",
+    "handleMethod": "",
+    "severity": "低"
+  }
+]

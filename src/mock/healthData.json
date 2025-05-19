@@ -1,0 +1,34 @@
+{
+  "heartRate": {
+    "data": [
+      { "time": "2024-10-01", "value": 70 },
+      { "time": "2024-10-02", "value": 75 }
+    ]
+  },
+  "bloodOxygen": {
+    "data": [
+      { "time": "2024-10-01", "value": 98 },
+      { "time": "2024-10-02", "value": 97 }
+    ]
+  },
+  "bloodPressure": {
+    "data": [
+      { "time": "2024-10-01", "systolic": 120, "diastolic": 80 },
+      { "time": "2024-10-02", "systolic": 122, "diastolic": 82 }
+    ]
+  },
+  "steps": {
+    "data": [
+      { "time": "2024-10-01", "value": 5000 },
+      { "time": "2024-10-02", "value": 6000 }
+    ],
+    "goal": 8000
+  },
+  "sleep": {
+    "data": [
+      { "time": "2024-10-01", "value": 7 },
+      { "time": "2024-10-02", "value": 7.5 }
+    ],
+    "goal": 8
+  }
+}

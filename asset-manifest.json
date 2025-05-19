@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/silver-age-smart-elderly-care-platform/static/css/main.482fc289.css",
+    "main.js": "/silver-age-smart-elderly-care-platform/static/js/main.9d364265.js",
+    "static/js/453.e1bf090a.chunk.js": "/silver-age-smart-elderly-care-platform/static/js/453.e1bf090a.chunk.js",
+    "index.html": "/silver-age-smart-elderly-care-platform/index.html",
+    "main.482fc289.css.map": "/silver-age-smart-elderly-care-platform/static/css/main.482fc289.css.map",
+    "main.9d364265.js.map": "/silver-age-smart-elderly-care-platform/static/js/main.9d364265.js.map",
+    "453.e1bf090a.chunk.js.map": "/silver-age-smart-elderly-care-platform/static/js/453.e1bf090a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.482fc289.css",
+    "static/js/main.9d364265.js"
+  ]
+}

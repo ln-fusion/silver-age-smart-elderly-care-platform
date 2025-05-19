@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Card, Typography, Table, Tag, Badge, Space, Button, Tabs, Form, Input, Select, Upload, Modal } from 'antd';
-import { 
-  MobileOutlined, 
-  CheckCircleOutlined, 
-  CloseCircleOutlined, 
+import {
+  MobileOutlined,
+  CheckCircleOutlined,
+  CloseCircleOutlined,
   WarningOutlined,
   UploadOutlined,
   SyncOutlined,
@@ -23,12 +23,34 @@ const DeviceManagement = () => {
   const [data, setData] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState(null);
-  
-  useEffect(() => {
-    // 在实际应用中，这里会从API获取数据
-    setData(deviceData);
-  }, []);
 
+  useEffect(() => {
+    const processedData = deviceData.map(device => {
+      const battery = typeof device.battery === 'string' ?
+          parseFloat(device.battery.replace('%', '')) :
+          device.battery;
+
+      // 自动计算状态
+      let status = device.status;
+      if (!isNaN(battery)) {
+        if (battery < 15) {
+          status = '故障';
+        } else if (battery < 30) {
+          status = '低电量';
+        } else if (device.status === '故障' && battery >= 30) {
+          status = '在线'; // 恢复状态
+        }
+      }
+
+      return {
+        ...device,
+        battery: !isNaN(battery) ? battery : 'N/A',
+        status
+      };
+    });
+
+    setData(processedData);
+  }, []);
   const handleViewDetails = (record) => {
     setSelectedDevice(record);
     setIsModalVisible(true);
@@ -150,7 +172,7 @@ const DeviceManagement = () => {
       <Paragraph>
         管理和监控智能养老设备，确保设备正常运行。
       </Paragraph>
-      
+
       <Row gutter={[16, 16]} style={{ marginBottom: '16px' }}>
         <Col xs={24} sm={8}>
           <Card bordered={false}>
@@ -183,9 +205,9 @@ const DeviceManagement = () => {
           </Card>
         </Col>
       </Row>
-      
-      <Card 
-        title="设备列表" 
+
+      <Card
+        title="设备列表"
         extra={
           <Space>
             <Button icon={<SearchOutlined />}>搜索设备</Button>
@@ -195,40 +217,40 @@ const DeviceManagement = () => {
       >
         <Tabs activeKey={activeTab} onChange={setActiveTab}>
           <TabPane tab="全部设备" key="1">
-            <Table 
-              columns={columns} 
-              dataSource={data} 
+            <Table
+              columns={columns}
+              dataSource={data}
               rowKey="id"
               pagination={{ pageSize: 10 }}
             />
           </TabPane>
           <TabPane tab={`在线设备 (${onlineDevices.length})`} key="2">
-            <Table 
-              columns={columns} 
-              dataSource={onlineDevices} 
+            <Table
+              columns={columns}
+              dataSource={onlineDevices}
               rowKey="id"
               pagination={{ pageSize: 10 }}
             />
           </TabPane>
           <TabPane tab={`离线设备 (${offlineDevices.length})`} key="3">
-            <Table 
-              columns={columns} 
-              dataSource={offlineDevices} 
+            <Table
+              columns={columns}
+              dataSource={offlineDevices}
               rowKey="id"
               pagination={{ pageSize: 10 }}
             />
           </TabPane>
           <TabPane tab={`故障/低电量设备 (${malfunctionDevices.length})`} key="4">
-            <Table 
-              columns={columns} 
-              dataSource={malfunctionDevices} 
+            <Table
+              columns={columns}
+              dataSource={malfunctionDevices}
               rowKey="id"
               pagination={{ pageSize: 10 }}
             />
           </TabPane>
         </Tabs>
       </Card>
-      
+
       {/* 设备详情模态框 */}
       <Modal
         title={selectedDevice ? `设备详情 - ${selectedDevice.id}` : "设备详情"}
@@ -260,9 +282,9 @@ const DeviceManagement = () => {
                   <Text type="secondary">设备类型</Text>
                   <div>
                     <Tag color={
-                      selectedDevice.type === '智能手环' ? 'green' : 
-                      selectedDevice.type === '家庭终端' ? 'purple' : 
-                      selectedDevice.type === '智能药盒' ? 'orange' : 
+                      selectedDevice.type === '智能手环' ? 'green' :
+                      selectedDevice.type === '家庭终端' ? 'purple' :
+                      selectedDevice.type === '智能药盒' ? 'orange' :
                       selectedDevice.type === '紧急呼叫器' ? 'red' : 'blue'
                     }>
                       {selectedDevice.type}
@@ -274,19 +296,19 @@ const DeviceManagement = () => {
                 <div className="detail-item">
                   <Text type="secondary">设备状态</Text>
                   <div>
-                    <Badge 
+                    <Badge
                       status={
-                        selectedDevice.status === '在线' ? 'success' : 
-                        selectedDevice.status === '离线' ? 'default' : 
+                        selectedDevice.status === '在线' ? 'success' :
+                        selectedDevice.status === '离线' ? 'default' :
                         selectedDevice.status === '故障' ? 'error' : 'warning'
-                      } 
-                      text={selectedDevice.status} 
+                      }
+                      text={selectedDevice.status}
                     />
                   </div>
                 </div>
               </Col>
             </Row>
-            
+
             <Row gutter={16} style={{ marginTop: 16 }}>
               <Col span={12}>
                 <div className="detail-item">
@@ -301,7 +323,7 @@ const DeviceManagement = () => {
                 </div>
               </Col>
             </Row>
-            
+
             <Row gutter={16} style={{ marginTop: 16 }}>
               <Col span={12}>
                 <div className="detail-item">
@@ -316,7 +338,7 @@ const DeviceManagement = () => {
                 </div>
               </Col>
             </Row>
-            
+
             <Row gutter={16} style={{ marginTop: 16 }}>
               <Col span={12}>
                 <div className="detail-item">
@@ -329,13 +351,13 @@ const DeviceManagement = () => {
                   <Text type="secondary">电池电量</Text>
                   <div>
                     <div style={{ width: '100%', maxWidth: '150px' }}>
-                      <div 
-                        style={{ 
-                          width: `${selectedDevice.battery}%`, 
-                          background: selectedDevice.battery < 30 ? 'red' : selectedDevice.battery < 50 ? 'orange' : 'green', 
-                          height: '8px', 
-                          borderRadius: '4px' 
-                        }} 
+                      <div
+                        style={{
+                          width: `${selectedDevice.battery}%`,
+                          background: selectedDevice.battery < 30 ? 'red' : selectedDevice.battery < 50 ? 'orange' : 'green',
+                          height: '8px',
+                          borderRadius: '4px'
+                        }}
                       />
                       <div style={{ marginTop: '4px' }}>{selectedDevice.battery}%</div>
                     </div>
@@ -343,7 +365,7 @@ const DeviceManagement = () => {
                 </div>
               </Col>
             </Row>
-            
+
             <Row gutter={16} style={{ marginTop: 16 }}>
               <Col span={12}>
                 <div className="detail-item">
@@ -358,14 +380,14 @@ const DeviceManagement = () => {
                 </div>
               </Col>
             </Row>
-            
+
             <div style={{ marginTop: 16 }}>
               <Text type="secondary">设备描述</Text>
               <Card size="small" style={{ marginTop: 8 }}>
                 <div style={{ whiteSpace: 'pre-line' }}>{selectedDevice.description}</div>
               </Card>
             </div>
-            
+
             <div style={{ marginTop: 16 }}>
               <Text type="secondary">传感器状态</Text>
               <Card size="small" style={{ marginTop: 8 }}>
@@ -373,9 +395,9 @@ const DeviceManagement = () => {
                   {selectedDevice.sensors.map((sensor, index) => (
                     <Col span={8} key={index}>
                       <div style={{ textAlign: 'center', padding: '8px' }}>
-                        <Badge 
-                          status={sensor.status === '正常' ? 'success' : 'error'} 
-                          text={`${sensor.name}: ${sensor.status}`} 
+                        <Badge
+                          status={sensor.status === '正常' ? 'success' : 'error'}
+                          text={`${sensor.name}: ${sensor.status}`}
                         />
                       </div>
                     </Col>
@@ -383,7 +405,7 @@ const DeviceManagement = () => {
                 </Row>
               </Card>
             </div>
-            
+
             <div style={{ marginTop: 16 }}>
               <Text type="secondary">操作记录</Text>
               <Card size="small" style={{ marginTop: 8 }}>
@@ -396,7 +418,7 @@ const DeviceManagement = () => {
                 </ul>
               </Card>
             </div>
-            
+
             {selectedDevice.status !== '离线' && (
               <div style={{ marginTop: 16 }}>
                 <Text type="secondary">可用操作</Text>
@@ -412,7 +434,7 @@ const DeviceManagement = () => {
           </div>
         )}
       </Modal>
-      
+
       <style jsx>{`
         .detail-item {
           margin-bottom: 8px;

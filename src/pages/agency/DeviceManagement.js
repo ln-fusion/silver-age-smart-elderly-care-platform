@@ -345,7 +345,7 @@ const DeviceManagement = () => {
                   <Text type="secondary">固件版本</Text>
                   <div>{selectedDevice.firmwareVersion}</div>
                 </div>
-              </Col>
+              </Col>//这是注释
               <Col span={12}>
                 <div className="detail-item">
                   <Text type="secondary">电池电量</Text>
